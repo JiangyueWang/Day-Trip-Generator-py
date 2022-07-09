@@ -24,3 +24,30 @@ def rand_item(input_list):
 def append_rand_item(random_type, random_type_list):
     random_type_list.append(random_type)
     return random_type_list
+
+
+# let user to confirm the random generated item
+def user_confirmation_fn(original_type_list, random_type, random_type_list, type):
+
+    while True:
+        print(
+            f'We have selected {random_type} for your {type}! Does this sound good?')
+        user_decision = (input("Enter y/n: ")).lower()
+        if user_decision == 'y':
+            random_type = random_type
+            print(f'Awesome! Glad your {type} is decide, lets move on')
+            break
+        else:
+            while True:
+                if len(random_type_list) < len(original_type_list):
+                    random_type = rand_item(original_type_list)
+                    if random_type not in random_type_list:
+                        append_rand_item(random_type, random_type_list,)
+                        break
+                else:
+                    print(
+                        f'You havent selected a {type} from the recommendation list, go through again')
+                    random_type_list = []
+                    continue
+            continue
+    return random_type
