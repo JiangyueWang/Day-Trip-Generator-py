@@ -95,3 +95,34 @@ def confirmed_entertainment():
     confirmed_random_entertainment = user_confirmation_fn(
         entertainments_list, random_entertainment, random_entertainment_list, "entertainment")
     return confirmed_random_entertainment
+
+
+# main function to run Day Trip Generator
+def run():
+    while True:
+        print("----------choosing destination----------")
+        my_destination = confirmed_destiantion()
+
+        print("----------choosing restaurant----------")
+        my_restaurant = confirmed_restaurant()
+
+        print("----------choosing transportation----------")
+        my_transportation = confirmed_transportation()
+
+        print("----------choosing entertainment ----------")
+        my_entertainment = confirmed_entertainment()
+        print("----------Trip Confirmation----------")
+        print("Congrats! We have completed generating your day trip. Now let's confirm that is the trip you wanted")
+        print(
+            f'Destiantion: {my_destination}\nRestaurant: {my_restaurant}\nTransportation: {my_transportation}\nEntertainment: {my_entertainment}')
+        user_final_confirmation = input(
+            'Would you like to finalize this trip? Enter y/n: ')
+        if user_final_confirmation == 'y':
+            print("Thanks for confirming your trip! Enjoy your holiday")
+            break
+        else:
+            print(f'Did happy with your selection, start again...')
+            continue
+
+
+run()
