@@ -62,3 +62,36 @@ def confirmed_destiantion():
     confirmed_random_destination = user_confirmation_fn(
         destinations_list, random_destination, random_destination_list, "destination")
     return confirmed_random_destination
+
+
+# user confirms the random generated restaurant
+def confirmed_restaurant():
+    random_restaurant_list = []
+    random_restaurant = rand_item(restaurants_list)
+    random_restaurant_list = append_rand_item(
+        random_restaurant, random_restaurant_list)
+    confirmed_random_restaurant = user_confirmation_fn(
+        restaurants_list, random_restaurant, random_restaurant_list, "restaurant")
+    return confirmed_random_restaurant
+
+
+# user onfirms the random generated transportation
+def confirmed_transportation():
+    random_transportation_list = []
+    random_transportation = rand_item(transportations_list)
+    random_transportation_list = append_rand_item(
+        random_transportation, random_transportation_list)
+    confirmed_random_transportation = user_confirmation_fn(
+        transportations_list, random_transportation, random_transportation_list, "transportation")
+    return confirmed_random_transportation
+
+
+# user confirms the random generated entertaiment
+def confirmed_entertainment():
+    random_entertainment_list = []
+    random_entertainment = rand_item(entertainments_list)
+    random_entertainment_list = append_rand_item(
+        random_entertainment, random_entertainment_list)
+    confirmed_random_entertainment = user_confirmation_fn(
+        entertainments_list, random_entertainment, random_entertainment_list, "entertainment")
+    return confirmed_random_entertainment
