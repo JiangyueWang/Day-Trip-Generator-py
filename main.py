@@ -51,3 +51,14 @@ def user_confirmation_fn(original_type_list, random_type, random_type_list, type
                     continue
             continue
     return random_type
+
+
+# user confirms the random generated destiantion
+def confirmed_destiantion():
+    random_destination_list = []
+    random_destination = rand_item(destinations_list)
+    random_destination_list = append_rand_item(
+        random_destination, random_destination_list)
+    confirmed_random_destination = user_confirmation_fn(
+        destinations_list, random_destination, random_destination_list, "destination")
+    return confirmed_random_destination
